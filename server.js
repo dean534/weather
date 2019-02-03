@@ -19,7 +19,8 @@ app.use(
 );
 
 app.use(express.static("public"));
-app.get("/", (req, res) => {
-  res.sendfile(path.resolve(__dirname, "publice", "index.html"));
+app.get("*", (req, res) => {
+  res.sendfile(path.resolve(__dirname, "public", "index.html"));
 });
+
 app.listen(port, console.log("graphQL server is ready..."));
